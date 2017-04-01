@@ -7,27 +7,27 @@ quizModule.controller('QuizAppController',['$scope', function($scope){
     qac.students = 
     [
         {
-            name: "Jim Smith",
+            name: "Jason Madison",
             correct: 0,
             incorrect: 0
         },
         {
-            name: "Casey Jones",
+            name: "Keona Williams",
             correct: 0,
             incorrect: 0
         },
-                {
-            name: "Carlos Alvarez",
+        {
+            name: "Angel Morales",
             correct: 0,
             incorrect: 0
         },
-                {
-            name: "Lisa Jimenez",
+        {
+            name: "James Hill",
             correct: 0,
             incorrect: 0
         },
-                {
-            name: "Jennifer Lopez",
+        {
+            name: "Deirdre LaNoue",
             correct: 0,
             incorrect: 0
         }
@@ -38,24 +38,46 @@ quizModule.controller('QuizAppController',['$scope', function($scope){
     qac.questions = 
     [
         {
-            text: "AngularJS uses what programming language?", 
-            answer: "JavaScript"
+            text: "Dallas Cowboy with most career rushing yards?", 
+            correctAnswer: "Emmitt Smith",
+            wrongAnswer1: "Tony Dorsett",
+            wrongAnswer2: "Don Perkins",
+            wrongAnswer3: "Calvin Hill"
         },
         {
-            text: "The scope is the ______ between the template and controller", 
-            answer: "glue"
+            text: "Dallas Cowboy with most career passing yards?", 
+            correctAnswer: "Tony Romo",
+            wrongAnswer1: "Roger Staubach",
+            wrongAnswer2: "Troy Aikman",
+            wrongAnswer3: "Danny White"
         },
                 {
-            text: "Angular uses _______ and _________ in the template", 
-            answer: "directives and expressions"
+            text: "Dallas Cowboy with most single season rushing yards?", 
+            correctAnswer: "DeMarco Murray",
+            wrongAnswer1: "Emmitt Smith",
+            wrongAnswer2: "Tony Dorsett",
+            wrongAnswer3: "Ezekiel Elliot"
         },
         {
-            text: "You bootstrap your angular application with the ngApp directive", 
-            answer: "true"
+            text: "Dallas Cowboy with most single season passing yards?", 
+            correctAnswer: "Tony Romo",
+            wrongAnswer1: "Roger Staubach",
+            wrongAnswer2: "Troy Aikman",
+            wrongAnswer3: "Danny White"
         },
         {
-            text: "AngularJS is fun", 
-            answer: "Yes"
+            text: "Dallas Cowboy with most career receiving yards?", 
+            correctAnswer: "Michael Irvin",
+            wrongAnswer1: "Jason Witten",
+            wrongAnswer2: "Tony Hill",
+            wrongAnswer3: "Drew Pearson"
+        },
+        {
+            text: "Dallas Cowboy with most single season receiving yards?", 
+            correctAnswer: "Michael Irvin",
+            wrongAnswer1: "Jason Witten",
+            wrongAnswer2: "Dez Bryant",
+            wrongAnswer3: "Terrel Owens"
         },
     ];
     
@@ -89,7 +111,7 @@ quizModule.controller('QuizAppController',['$scope', function($scope){
              
             qac.students_completed.push(qac.selected_student);
              
-            qac.students.splice(index, 1);
+            //qac.students.splice(index, 1);
         }
         else{
             qac.students = qac.students_completed;

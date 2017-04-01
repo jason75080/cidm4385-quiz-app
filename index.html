@@ -4,21 +4,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">        
         <title>Quiz App</title>        
     </head>
-    <body>
-        <div class="jumbotron">
-            <h1>Quiz Program</h1>
-            <p>Quizzing program selects random students and random questions.</p>
-        </div>  
-    
-        <div class="container">
-            <div ng-controller="QuizAppController as qac">
-                <p><span>student:</span> {{qac.selected_student.name}} - 
-                correct: {{qac.selected_student.correct}} - incorrect: {{qac.selected_student.incorrect}}</p>
-                <p><span>question:</span> {{qac.selected_question.text}}</p>
-                <p><span>answer:</span> {{qac.selected_question.answer}}</p>
-                <button type="button"ng-click="qac.doCorrect()">Correct</button>
-                <button type="button"ng-click="qac.doIncorrect()">Incorrect</button>
-            </div>
+    <body> 
+        <div ng-controller="QuizAppController as qac">
+            <p>This question is for {{qac.selected_student.name}}</p>
+            <p>{{qac.selected_question.text}}</p>
+            <button type="button"ng-click="qac.doIncorrect()">{{qac.selected_question.wrongAnswer1}}</button>
+            <button type="button"ng-click="qac.doIncorrect()">{{qac.selected_question.wrongAnswer2}}</button>
+            <button type="button"ng-click="qac.doCorrect()">{{qac.selected_question.correctAnswer}}</button>
+            <button type="button"ng-click="qac.doIncorrect()">{{qac.selected_question.wrongAnswer3}}</button>
+            <br />
+            <ul class="example-animate-container">
+                <li ng-repeat="student in qac.students">
+                    {{student.name}}<br />
+                    Correct: {{student.correct}}<br />
+                    Incorrect: {{student.incorrect}}<br /><br />
+                </li>
+            </ul>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>               
         <script src="app.js"></script>
